@@ -1,0 +1,15 @@
+data_dzikraa = read.delim("clipboard")
+View(data_dzikraa)
+mean(data_dzikraa$tinggi_badan)
+str(data_dzikraa)
+
+#data_dzikraa1 = read.table("C:/Users/Dzikra/OneDrive/Documents/Kuliah Semester 3/Statistika/praktikum/praktikum1/BahanPraktikum1_Dzikrams.csv" , header = TRUE, sep = ";")
+data_dzikra_csv = read.csv("C:/Users/Dzikra/OneDrive/Documents/Kuliah Semester 3/Statistika/praktikum/praktikum1/BahanPraktikum1_Dzikrams.csv")
+View(data_dzikra_csv) 
+mean(data_dzikra_csv$tinggi_badan)
+str(data_dzikra_csv)
+
+install.packages("xlsx")
+library("xlsx")
+
+data_dzikra_xlsx = read.xlsx("C:/Users/Dzikra/OneDrive/Documents/Kuliah Semester 3/Statistika/praktikum/praktikum1/BahanPraktikum1_Dzikrams.xlsx", 1)
