@@ -1,0 +1,28 @@
+data_dzikrams1 = read.csv("C:/Users/Dzikra/OneDrive/Documents/Kuliah Semester 3/Statistika/praktikum/praktikum1/BahanPraktikum1_Dzikrams.csv")
+View(data_dzikrams1)
+
+dzikrams1 <- data_dzikrams1[3]  
+View(dzikrams1)
+
+dzikrams1$tinggi_badan <- ifelse(dzikrams1$tinggi_badan > 160, c("Tinggi"), c("Pendek"))
+View(dzikrams1)
+
+dzikrams1$jurusan <- c("infor21")
+dzikrams1$fakultas <- c("FTI")
+View(dzikrams1)
+
+dzikrams1$fakultas <- NULL
+View(dzikrams1)
+
+data_dzikrams1.kolom1dan2 <- data_dzikrams1[,1:2]
+data_dzikrams1.kolom3dan4 <- data_dzikrams1[,3:4]
+data_dzikrams1.kolom1sd4<-cbind(data_dzikrams1.kolom1dan2, data_dzikrams1.kolom3dan4) 
+View(data_dzikrams1.kolom1sd4)
+
+data_dzikra.baris1sd5 <- data_dzikrams1[1:5,]
+data_dzikra.baris25sd30 <- data_dzikrams1[25:30,]
+data_dzikra.gabunganbaris <- rbind(data_dzikra.baris1sd5, data_dzikra.baris25sd30)
+View(data_dzikra.gabunganbaris)
+
+data_dzikrams1.sort<-data_dzikrams1[order(data_dzikrams1$waktu_perjalanan),] 
+View(data_dzikrams1.sort)
