@@ -1,0 +1,11 @@
+dzikra5 = read.delim("clipboard")
+View(dzikra5)
+str(dzikra5)
+mean(dzikra5$Volume)
+t.test(dzikra5$Volume, mu=10)
+
+dzikra51 = read.delim("clipboard")
+View(dzikra51)
+str(dzikra51)
+mean(dzikra51$Volume)
+t.test(dzikra51$Volume, mu=14500)
