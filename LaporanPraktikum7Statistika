@@ -1,0 +1,41 @@
+from google.colab import files
+import pandas as pd
+
+uploaded = files.upload()
+
+#memanggil dan menampilkan dataset
+data_dzikra = pd.read_csv('/content/titanic.csv')
+print(data_dzikra)
+
+#mengambil data pada kolom tertentu
+dzikra1 = data_dzikra.loc[:,['Age','Pclass','Survived']]
+print(dzikra1)
+
+#memvisualisasikan data titanic
+dzikra2 = data_dzikra[['Age', 'Pclass', 'Survived']]
+dzikra2.plot(title='Persebaran Data', x='Age', y='Pclass', kind='scatter', c='Survived', colormap='Paired')
+
+#memanipulasi data jumlah penumpang berdasarkan group Pclass
+dzikra3 = data_dzikra[['Name', 'Sex', 'Age', 'Pclass', 'Fare']]
+penumpang=dzikra3.groupby('Pclass')['Name'].nunique()
+print('Jumlah Penumpang:\n', penumpang)
+
+#memfilter data penumpang yang selamat berdasarkan pclass
+dzikra4 = data_dzikra[['Name', 'Sex', 'Age', 'Pclass', 'Fare']]
+notsurvivedpassanger=dzikra4['Pclass'].loc[data_dzikra['Survived']==0]
+print('Penumpang yang tidak survived:\n', notsurvivedpassanger.value_counts())
+survivedpassanger=dzikra4['Pclass'].loc[data_dzikra['Survived']==1]
+print('\nPenumpang yang survived:\n', survivedpassanger.value_counts())
+
+
+#elkom 2
+dzikra4 = data_dzikra[['Name', 'Sex', 'Age', 'Pclass', 'Fare']]
+penumpang=dzikra4.groupby('Sex')['Name'].nunique()
+print('Jumlah Penumpang:\n', penumpang)
+
+#memfilter data penumpang yang selamat berdasarkan pclass elkom 2
+dzikra5 = data_dzikra[['Name', 'Sex', 'Age', 'Pclass', 'Fare']]
+notsurvivedpassanger=dzikra5['Sex'].loc[data_dzikra['Survived']==0]
+print('Penumpang yang tidak survived:\n', notsurvivedpassanger.value_counts())
+survivedpassanger=dzikra5['Sex'].loc[data_dzikra['Survived']==1]
+print('\nPenumpang yang survived:\n', survivedpassanger.value_counts())
