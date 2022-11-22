@@ -1,5 +1,5 @@
-gery=rnorm(100, 0, 1)
-View(gery)
+dzikra=rnorm(100, 0, 1)
+View(dzikra)
 hist()
 
 pnorm(160, 165, 6)
