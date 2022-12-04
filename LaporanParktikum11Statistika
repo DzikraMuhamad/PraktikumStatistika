@@ -1,0 +1,16 @@
+df_dzikra11 = read.delim("clipboard")
+View(df_dzikra11)
+head(df_dzikra11)
+model <- aov(korosi~metode, data=df_dzikra11)
+summary(model)
+tukey.test <- TukeyHSD(model)
+tukey.test
+
+#latihan 2
+df_dzikrams11=PlantGrowth
+View(df_dzikrams11)
+model1 <- aov(weight~group, data=df_dzikrams11)
+summary(model1)
+tukey.test <- TukeyHSD(model1)
+tukey.test
+
