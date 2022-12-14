@@ -1,0 +1,14 @@
+df_dzikra12=read.delim("clipboard")
+head(df_dzikra12)
+model_reg=lm(df_dzikra12$y~df_dzikra12$x)
+summary(model_reg)
+
+df_dzikra121=read.delim("clipboard")
+df_dzikra121$brick_dummy <- ifelse(df_dzikra121$Brick == "Yes", 1,0)
+df_dzikra121$N_dummy1 <- ifelse(df_dzikra121$Neighborhood == "West", 1,0)
+df_dzikra121$N_dummy2 <- ifelse(df_dzikra121$Neighborhood == "North", 1,0)
+model=lm(df_dzikra121$Price~df_dzikra121$SqFt+df_dzikra121$Bedrooms+df_dzikra121$Bathrooms+df_dzikra121$brick_dummy+df_dzikra121$N_dummy1+df_dzikra121$N_dummy2)
+summary(model)
+
+by(df_dzikra121$Price, df_dzikra121$Neighborhood, mean)
+by(df_dzikra121$Price, df_dzikra121$Brick, mean)
