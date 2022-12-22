@@ -1,0 +1,15 @@
+dataku_dzikra = read.delim("clipboard")
+View(dataku_dzikra)
+wilcox.test(dataku_dzikra$Sebelum,dataku_dzikra$Setelah,paired=TRUE)
+
+#latihan ketiga
+dataku_dzikra13 = read.delim('clipboard')
+View(dataku_dzikra13)
+wilcox.test(dataku_dzikra13$Ganjil,dataku_dzikra13$Genap,paired=TRUE)
+
+#Lat ke4 – Tugas
+dzikraku = read.delim("clipboard")
+head(dzikraku)
+wilcox.test(dzikraku$caffeine,dzikraku$placebo,paired=TRUE)
+rank(dzikraku$caffeine)
+rank(dzikraku$placebo)
